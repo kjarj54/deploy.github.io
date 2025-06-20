@@ -38,8 +38,16 @@ jobs:
 
     needs: build
 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment-pages.outputs.page_url }}
+
     steps:
       - name: Deploy
-        run: echo "Deploying application..."
+        id: deployment-pages
+        uses: actions/deploy-pages@v4
 
+
+
+        
 
