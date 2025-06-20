@@ -7,9 +7,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
+      
       - name: Print Variable
         run: echo "The variable is ${{ secrets.MY_VARIABLE }}"
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
       - name: Set-up
         uses: actions/setup-node@v4
